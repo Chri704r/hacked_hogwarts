@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Student List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hogwarts Student List</h1>
+        <p>Students currently showing on the list:</p>
+            
+    </header>
+    <main>
+        <nav>
+            <input type="search" id="search_inputfield" placeholder="Search here..">
+            <div id="filter_buttons">
+                <p>Show only:</p>
+                <button data-action="filter" data-filter="non-expelled" class="filter">Non-expelled students</button>
+                <button data-action="filter" data-filter="expelled" class="filter">Expelled students</button>
+                <button data-action="filter" data-filter="prefect" class="filter">Prefects</button>
+                <button data-action="filter" data-filter="slytherin" class="filter">Students in Slytherin</button>
+                <button data-action="filter" data-filter="ravenclaw" class="filter">Students in Rawenclaw</button>
+                <button data-action="filter" data-filter="hufflepuff" class="filter">Students in Hufflepuff</button>
+                <button data-action="filter" data-filter="gryffindor" class="filter">Students in Gryffindor</button>
+                <button data-action="filter" data-filter="all" class="filter">All students</button>
+            </div>
+            <div id="sort_buttons">
+                <p>Sort by:</p>
+                <button data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname</button>
+                <button data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</button>
+            </div>
+            
+        </nav>
+        <div id="studentList"></div>
+
+        <div id="modal" class="zindex">
+            <div id="popup" class="hidden">
+                <img id="student_photo" src="" alt="">
+                <div id="student_info">
+                    <div id="pop_names">
+                        <h3 id="pop_name">Fullname</h3>
+                        <h3 id="nickname">"nick"</h3>
+                    </div>
+                    <p id="house">House:</p>
+                    <p id="bloodstatus">Blood-status:</p>
+                    <p id="status">Status:</p>
+                    <p id="prefect">Prefect:</p>
+                    <p id="inquisitorial">Member of inquisitorial squad:</p>
+                </div>
+                <div>
+                    <button id="closebutton"></button>
+                    <img src="" alt="">
+                </div>
+            </div>
+         </div>
+    </main>
+
+    <template class="student">
+        <div id="name">
+          <p data-field="firstname" id="firstname">FIRSTNAME</p>
+          <p data-field="middlename" id="middlename">MIDDLENAME</p>
+          <p data-field="lastname" id="lastname"></p>
+          <!-- <button>Expel student</button> -->
+        </div>
+    </template>
+    
+    <footer>
+        <p>©Copyright | Christine Piilmann 2021</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

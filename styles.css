@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 150px;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 30px;
+}
+
+nav {
+	background-color: rgb(184, 184, 253);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 300px auto;
+	grid-gap: 30px;
+}
+
+/* -------STYLE OF FILTER AND SORT BUTTONS------ */
+#filter_buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.filter {
+	width: 80%;
+	height: 30px;
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0);
+	border: 1px solid rgb(122, 122, 122);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.filter:hover {
+	background-color: rgb(162, 162, 255);
+}
+
+#sort {
+	margin-top: 10px;
+}
+/* -------STYLE OF STUDENT LIST------ */
+#studentList {
+	background-color: aliceblue;
+}
+
+#name {
+	display: flex;
+	flex-direction: row;
+	gap: 3px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(197, 197, 197, 0.178);
+}
+
+#name:hover {
+	color: blueviolet;
+	cursor: pointer;
+}
+/* -----------POP UP BOX STYLING------------ */
+
+#modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	/* backdrop-filter: blur(1.5px); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#popup {
+	display: grid;
+	grid-template-columns: 100px 350px 1fr;
+	gap: 15px;
+	box-shadow: 1px 1px 5px grey;
+	border-radius: 12px;
+	padding: 1em;
+	background-color: white;
+	position: relative;
+	padding-bottom: 100px;
+}
+
+#student_photo {
+	width: 100px;
+	height: 100px;
+}
+
+#pop_names {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+button#closebutton {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	border-radius: 50%;
+	width: 17px;
+	height: 17px;
+	background-color: red;
+	border: 1px solid rgb(116, 0, 0);
+}
+
+button#closebutton:hover {
+	background-color: rgb(161, 0, 0);
+	cursor: pointer;
+}
+
+footer {
+	margin-top: 60px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.zindex {
+	z-index: -1;
+}
+
+.backdrop {
+	backdrop-filter: blur(1.5px);
+}
