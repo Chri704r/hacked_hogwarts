@@ -1,77 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogwarts Student List</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Hogwarts Student List</h1>
-        <p>Students currently showing on the list:</p>
-            
-    </header>
-    <main>
-        <nav>
-            <input type="search" id="search_inputfield" placeholder="Search here..">
-            <div id="filter_buttons">
-                <p>Show only:</p>
-                <button data-action="filter" data-filter="non-expelled" class="filter">Non-expelled students</button>
-                <button data-action="filter" data-filter="expelled" class="filter">Expelled students</button>
-                <button data-action="filter" data-filter="prefect" class="filter">Prefects</button>
-                <button data-action="filter" data-filter="slytherin" class="filter">Students in Slytherin</button>
-                <button data-action="filter" data-filter="ravenclaw" class="filter">Students in Rawenclaw</button>
-                <button data-action="filter" data-filter="hufflepuff" class="filter">Students in Hufflepuff</button>
-                <button data-action="filter" data-filter="gryffindor" class="filter">Students in Gryffindor</button>
-                <button data-action="filter" data-filter="all" class="filter">All students</button>
-            </div>
-            <div id="sort_buttons">
-                <p>Sort by:</p>
-                <button data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname</button>
-                <button data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</button>
-            </div>
-            
-        </nav>
-        <div id="studentList"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hogwarts Student List</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<img id="logo" src="images/hogwarts_logo_2.png" alt="hogwarts logo" />
+			<h1>Hogwarts Student List</h1>
+		</header>
+		<main>
+			<nav>
+				<div id="currently_showing">
+					<p>Currently showing:</p>
+					<p id="number_showing"></p>
+				</div>
+				<input type="search" id="search_inputfield" placeholder="Search for a student here.." />
+				<div id="filter_buttons">
+					<p>Filter by:</p>
+					<button data-action="filter" data-filter="all" class="filter valgt">
+						All students
+						<p id="number_all"></p>
+					</button>
+					<button data-action="filter" data-filter="expelled" class="filter">
+						Expelled students
+						<p id="number_expelled"></p>
+					</button>
+					<button data-action="filter" data-filter="non-expelled" class="filter">
+						Non-expelled students
+						<p id="number_not_expelled"></p>
+					</button>
+					<button data-action="filter" data-filter="prefect" class="filter">
+						Prefects
+						<p id="number_prefect"></p>
+					</button>
+					<button data-action="filter" data-filter="slytherin" class="filter">
+						Students in Slytherin
+						<p id="number_slytherin"></p>
+					</button>
+					<button data-action="filter" data-filter="ravenclaw" class="filter">
+						Students in Rawenclaw
+						<p id="number_Rawenclaw"></p>
+					</button>
+					<button data-action="filter" data-filter="hufflepuff" class="filter">
+						Students in Hufflepuff
+						<p id="number_hufflepuff"></p>
+					</button>
+					<button data-action="filter" data-filter="gryffindor" class="filter">
+						Students in Gryffindor
+						<p id="number_gryffindor"></p>
+					</button>
+					<button data-action="filter" data-filter="squad" class="filter">
+						Inquisitorial squad
+						<p id="number_squad"></p>
+					</button>
+				</div>
+				<div id="sort_buttons">
+					<p>Sort by:</p>
+					<button id="sort1" class="sort valgt" data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname A-Z</button>
+					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</button>
+					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="house">House</button>
+				</div>
+			</nav>
 
-        <div id="modal" class="zindex">
-            <div id="popup" class="hidden">
-                <img id="student_photo" src="" alt="">
-                <div id="student_info">
-                    <div id="pop_names">
-                        <h3 id="pop_name">Fullname</h3>
-                        <h3 id="nickname">"nick"</h3>
-                    </div>
-                    <p id="house">House:</p>
-                    <p id="bloodstatus">Blood-status:</p>
-                    <p id="status">Status:</p>
-                    <p id="prefect">Prefect:</p>
-                    <p id="inquisitorial">Member of inquisitorial squad:</p>
-                </div>
-                <div>
-                    <button id="closebutton"></button>
-                    <img src="" alt="">
-                </div>
-            </div>
-         </div>
-    </main>
+			<div>
+				<div id="top_info">
+					<p>House</p>
+					<p>Students</p>
+					<p>Expel student</p>
+					<p>Make Prefect</p>
+					<p>Add to <br />inquisitorial squad</p>
+				</div>
 
-    <template class="student">
-        <div id="name">
-          <p data-field="firstname" id="firstname">FIRSTNAME</p>
-          <p data-field="middlename" id="middlename">MIDDLENAME</p>
-          <p data-field="lastname" id="lastname"></p>
-          <!-- <button>Expel student</button> -->
-        </div>
-    </template>
-    
-    <footer>
-        <p>©Copyright | Christine Piilmann 2021</p>
-    </footer>
+				<div id="studentList"></div>
+			</div>
 
+			<div id="modal" class="zindex">
+				<div id="popup" class="hidden">
+					<img id="student_photo" src="" alt="" />
+					<div id="student_info">
+						<div id="pop_names">
+							<h3 id="pop_name">Fullname</h3>
+							<h3 id="nickname"></h3>
+						</div>
 
-    <script src="script.js"></script>
-</body>
+						<div class="info_wrapper">
+							<p>House:</p>
+							<p id="house">House:</p>
+						</div>
+						<div class="info_wrapper">
+							<p>Blood-status:</p>
+							<p id="bloodstatus"></p>
+						</div>
+						<div class="info_wrapper">
+							<p>Status:</p>
+							<p id="status"></p>
+						</div>
+						<div class="info_wrapper">
+							<p>Prefect:</p>
+							<p id="prefect"></p>
+						</div>
+						<div class="info_wrapper">
+							<p>Member of inquisitorial squad:</p>
+							<p id="inquisitorial"></p>
+						</div>
+					</div>
+					<div>
+						<button id="closebutton"></button>
+						<img src="" alt="" />
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<template class="student">
+			<div class="student_object">
+				<div>
+					<p data-field="student_house" id="student_house"></p>
+				</div>
+				<div id="name">
+					<p data-field="firstname" id="firstname">FIRSTNAME</p>
+					<p data-field="middlename" id="middlename">MIDDLENAME</p>
+					<p data-field="lastname" id="lastname"></p>
+				</div>
+				<div id="admin_buttons">
+					<button class="admin_buttons" id="expel" data-expel="false" data-field="expel">✘</button>
+					<button class="admin_buttons" data-prefect="false" data-field="prefect">★</button>
+					<button class="admin_buttons" data-squad="false" data-field="squad">✎</button>
+				</div>
+			</div>
+		</template>
+
+		<!-- popup warning - remove a or b -->
+		<div id="removeaorb" class="modal hidden">
+			<div class="dialog">
+				<h1>Warning!</h1>
+				<button class="closebutton">X</button>
+				<p>
+					There can not be any more than 2 prefects from each house<br />
+					Do you wish to remove one of the existing?
+				</p>
+				<div class="sidebyside">
+					<button id="removea">Remove <span data-field="winnerA">A</span></button>
+					<button id="removeb">Remove <span data-field="winnerB">B</span></button>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>©Copyright | Christine Piilmann 2021</p>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
 </html>
