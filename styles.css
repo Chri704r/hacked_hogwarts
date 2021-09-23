@@ -32,7 +32,7 @@ main {
 
 #logo {
 	width: 100px;
-	height: 100px;
+	height: 113px;
 	margin: 15px 0px 10px 40px;
 }
 
@@ -114,7 +114,7 @@ main {
 
 #top_info {
 	background-color: #eee5d5;
-	width: 100%;
+	max-width: 100%;
 	display: grid;
 	grid-template-columns: 100px auto 120px 120px 180px;
 	font-weight: bold;
@@ -165,6 +165,10 @@ main {
 
 [data-field="prefect"][data-prefect="true"] {
 	background-color: purple;
+}
+
+[data-field="squad"][data-squad="true"] {
+	background-color: green;
 }
 
 /* -----------POP UP BOX STYLING------------ */

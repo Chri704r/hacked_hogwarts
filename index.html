@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<header>
-			<img id="logo" src="images/hogwarts_logo_2.png" alt="hogwarts logo" />
+			<img id="logo" src="images/hogwarts_logo.png" alt="hogwarts logo" />
 			<h1>Hogwarts Student List</h1>
 		</header>
 		<main>
@@ -24,18 +24,15 @@
 				<input type="search" id="search_inputfield" placeholder="Search for a student here.." />
 				<div id="filter_buttons">
 					<p>Filter by:</p>
-					<button data-action="filter" data-filter="all" class="filter valgt">
-						All students
-						<p id="number_all"></p>
+					<button data-action="filter" data-filter="non-expelled" class="filter valgt">
+						Non-expelled students
+						<p id="number_not_expelled"></p>
 					</button>
 					<button data-action="filter" data-filter="expelled" class="filter">
 						Expelled students
 						<p id="number_expelled"></p>
 					</button>
-					<button data-action="filter" data-filter="non-expelled" class="filter">
-						Non-expelled students
-						<p id="number_not_expelled"></p>
-					</button>
+
 					<button data-action="filter" data-filter="prefect" class="filter">
 						Prefects
 						<p id="number_prefect"></p>
@@ -130,7 +127,7 @@
 					<p data-field="lastname" id="lastname"></p>
 				</div>
 				<div id="admin_buttons">
-					<button class="admin_buttons" id="expel" data-expel="false" data-field="expel">✘</button>
+					<button class="admin_buttons" id="expel" data-expel="false" data-field="expel">✕</button>
 					<button class="admin_buttons" data-prefect="false" data-field="prefect">★</button>
 					<button class="admin_buttons" data-squad="false" data-field="squad">✎</button>
 				</div>
@@ -153,7 +150,36 @@
 			</div>
 		</div>
 
+		<!-- popup warning - cannot be same gender -->
+		<div id="removegender" class="modal hidden">
+			<div class="dialog">
+				<h1>Warning!</h1>
+				<button class="closebutton">X</button>
+				<p>There cannot be two prefects of the same gender in same house</p>
+				<button id="removegender">Remove <span data-field="samegender">B</span></button>
+			</div>
+		</div>
+
+		<!-- popup warning - cannot be member of squad -->
+		<div id="member_warning" class="modal hidden">
+			<div class="dialog">
+				<h1>Warning!</h1>
+				<button class="closebutton">X</button>
+				<p>Student is not pure wizard and cannot be added to the inquisitorial squad</p>
+			</div>
+		</div>
+
+		<!-- popup warning - cannot be expelled -->
+		<div id="notexpelled" class="modal hidden">
+			<div class="dialog">
+				<h1>Warning!</h1>
+				<button class="closebutton">X</button>
+				<p>Sorry, this student cannot be expelled from the list</p>
+			</div>
+		</div>
+
 		<footer>
+			<input id="hack_button" type="text" />
 			<p>©Copyright | Christine Piilmann 2021</p>
 		</footer>
 
