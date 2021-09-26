@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", start);
 let allStudents = [];
 let expelledStudents = [];
 let isHacked = false;
-console.log(isHacked);
 
 const Student = {
 	firstname: "",
@@ -60,7 +59,6 @@ function prepareStudents(jsonData, jsonDataBlood) {
 	console.log(jsonDataBlood);
 
 	allStudents = jsonData.map((json) => preapareStudent(json, jsonDataBlood));
-	console.log(allStudents);
 
 	buildList();
 }
@@ -333,7 +331,6 @@ function searchInList() {
 	filter = input.value.toUpperCase();
 	ul = document.querySelector("#studentList");
 	li = ul.querySelectorAll("#name");
-	console.log(li);
 
 	// Loop through all list items, and hide those who don't match the search query
 	for (i = 0; i < li.length; i++) {
@@ -383,7 +380,6 @@ function displayList(students) {
 
 	//add styling to every other student
 	for (let i = 0; i < allStudents.length; i += 2) {
-		console.log(i);
 		const everyOther = document.querySelector("#studentList").children;
 		everyOther[i].style.backgroundColor = "#e7e1d4";
 	}
@@ -510,8 +506,6 @@ function expelTheStudent(expelledStudent) {
 		const removeStudent = allStudents.splice(indexOfExpelledStudent, 1);
 
 		expelledStudents.push(removeStudent[0]);
-		console.log(expelledStudents);
-		console.log(allStudents);
 
 		buildList();
 	}
@@ -534,7 +528,6 @@ function tryToMakeStudentPrefect(selectedStudent) {
 	const prefects = allStudents.filter((student) => student.prefect);
 	const prefectFromHouse = prefects.filter((student) => student.house === selectedStudent.house);
 	const prefectSameGender = prefects.filter((student) => student.gender === selectedStudent.gender);
-	console.log(selectedStudent);
 
 	if (prefectFromHouse.length >= 2) {
 		console.log("There can only be two prefects in each house");
@@ -729,7 +722,6 @@ function preHackTheSystem() {
 function hackTheSystem() {
 	isHacked = true;
 	console.log("SYSTEM IS HACKED");
-	console.log(isHacked);
 
 	randomizeBloodType();
 
