@@ -8,7 +8,10 @@
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700&family=Oswald:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header>
@@ -18,12 +21,12 @@
 		<main>
 			<nav>
 				<div id="currently_showing">
-					<p>Currently showing:</p>
-					<p id="number_showing"></p>
+					<p class="txt_style">Currently showing:</p>
+					<p class="txt_style" id="number_showing"></p>
 				</div>
 				<input type="search" id="search_inputfield" placeholder="Search for a student here.." />
 				<div id="filter_buttons">
-					<p>Filter by:</p>
+					<p class="txt_style">Filter by:</p>
 					<button data-action="filter" data-filter="non-expelled" class="filter valgt">
 						Non-expelled students
 						<p id="number_not_expelled"></p>
@@ -59,7 +62,7 @@
 					</button>
 				</div>
 				<div id="sort_buttons">
-					<p>Sort by:</p>
+					<p class="txt_style">Sort by:</p>
 					<button id="sort1" class="sort valgt" data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname A-Z</button>
 					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</button>
 					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="house">House</button>
@@ -68,8 +71,9 @@
 
 			<div>
 				<div id="top_info">
-					<p>House</p>
 					<p>Students</p>
+					<p>House</p>
+					<p>Blood status</p>
 					<p>Expel student</p>
 					<p>Make Prefect</p>
 					<p>Add to <br />inquisitorial squad</p>
@@ -118,14 +122,15 @@
 
 		<template class="student">
 			<div class="student_object">
-				<div>
-					<p data-field="student_house" id="student_house"></p>
-				</div>
 				<div id="name">
 					<p data-field="firstname" id="firstname">FIRSTNAME</p>
 					<p data-field="middlename" id="middlename">MIDDLENAME</p>
 					<p data-field="lastname" id="lastname"></p>
 				</div>
+				<div>
+					<p data-field="student_house" id="student_house"></p>
+				</div>
+				<p data-field="blood_status" id="blood_status"></p>
 				<div id="admin_buttons">
 					<button class="admin_buttons" id="expel" data-expel="false" data-field="expel">✕</button>
 					<button class="admin_buttons" data-prefect="false" data-field="prefect">★</button>

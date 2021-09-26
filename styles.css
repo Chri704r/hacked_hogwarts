@@ -38,6 +38,17 @@ main {
 
 /* -------STYLE OF FILTER AND SORT BUTTONS------ */
 
+.txt_style {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+#sort_buttons .txt_style,
+#filter_buttons .txt_style {
+	margin-left: 30px;
+}
+
 #search_inputfield {
 	width: 90%;
 	height: 30px;
@@ -69,6 +80,9 @@ main {
 	cursor: pointer;
 	color: #021a02;
 	box-shadow: -1px -1px 2px rgb(192, 206, 192), 1px 1px 2px #5e725e;
+	font-family: "Oswald", sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
 }
 
 .filter:hover {
@@ -97,6 +111,9 @@ main {
 	cursor: pointer;
 	color: #021a02;
 	box-shadow: -1px -1px 2px rgb(192, 206, 192), 1px 1px 2px #5e725e;
+	font-family: "Oswald", sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
 }
 
 .sort:hover {
@@ -113,30 +130,43 @@ main {
 /* -------STYLE OF STUDENT LIST------ */
 
 #top_info {
-	background-color: #eee5d5;
+	background-color: rgb(219, 211, 197);
 	max-width: 100%;
 	display: grid;
-	grid-template-columns: 100px auto 120px 120px 180px;
+	grid-template-columns: 230px 150px auto 120px 120px 180px;
 	font-weight: bold;
 	padding: 10px 0px 10px 20px;
+	font-family: "Frank Ruhl Libre", serif;
+}
+
+#top_info p {
+	display: flex;
+	text-align: center;
+	align-items: center;
 }
 
 #studentList {
 	background-color: #f8f4ec;
-	padding-left: 20px;
 }
 
 .student_object {
 	display: grid;
-	grid-template-columns: 100px auto 360px;
+	grid-template-columns: 230px 150px auto 400px;
+	font-family: "Frank Ruhl Libre", serif;
 }
 
 #name {
 	display: flex;
 	flex-direction: row;
 	gap: 3px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid rgba(197, 197, 197, 0.178);
+	margin: 5px 0px 5px 20px;
+	font-family: "Frank Ruhl Libre", serif;
+}
+
+#student_house,
+#blood_status,
+#admin_buttons {
+	margin: 5px 0px 5px 0px;
 }
 
 #studentList:nth-child(odd) {
@@ -150,17 +180,18 @@ main {
 
 #admin_buttons {
 	display: grid;
-	grid-template-columns: 70px 120px 180px;
+	grid-template-columns: 130px 130px 300px;
+	text-align: center;
 }
 
 .admin_buttons {
-	margin: 0 auto;
-	width: 60px;
+	width: 70px;
+	height: 25px;
 	border: 1px solid lightgrey;
-	background-color: white;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0);
 	color: black;
 	cursor: pointer;
-	text-decoration: underline;
 }
 
 [data-field="prefect"][data-prefect="true"] {
@@ -169,6 +200,10 @@ main {
 
 [data-field="squad"][data-squad="true"] {
 	background-color: green;
+}
+
+[data-field="expel"]:hover {
+	background-color: #a01b1b;
 }
 
 /* -----------POP UP BOX STYLING------------ */
