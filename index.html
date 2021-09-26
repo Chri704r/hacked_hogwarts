@@ -63,8 +63,8 @@
 				</div>
 				<div id="sort_buttons">
 					<p class="txt_style">Sort by:</p>
-					<button id="sort1" class="sort valgt" data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname A-Z</button>
-					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</button>
+					<button id="sort1" class="sort valgt_sort" data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname A-Z</button>
+					<button id="sort2" class="sort" data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname A-Z</button>
 					<button class="sort" data-action="sort" data-sort-direction="asc" data-sort="house">House</button>
 				</div>
 			</nav>
@@ -114,7 +114,7 @@
 					</div>
 					<div>
 						<button id="closebutton"></button>
-						<img src="" alt="" />
+						<img id="house_crest" src="" alt="" />
 					</div>
 				</div>
 			</div>
@@ -143,7 +143,7 @@
 		<div id="removeaorb" class="modal hidden">
 			<div class="dialog">
 				<h1>Warning!</h1>
-				<button class="closebutton">X</button>
+				<button class="closebutton"></button>
 				<p>
 					There can not be any more than 2 prefects from each house<br />
 					Do you wish to remove one of the existing?
@@ -178,13 +178,13 @@
 		<div id="notexpelled" class="modal hidden">
 			<div class="dialog">
 				<h1>Warning!</h1>
-				<button class="closebutton">X</button>
+				<button class="closebutton"></button>
 				<p>Sorry, this student cannot be expelled from the list</p>
 			</div>
 		</div>
 
 		<footer>
-			<input id="hack_button" type="text" />
+			<input placeholder="A secret.." id="hack_button" type="text" />
 			<p>©Copyright | Christine Piilmann 2021</p>
 		</footer>
 

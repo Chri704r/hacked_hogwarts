@@ -23,6 +23,7 @@ h1 {
 nav {
 	background-color: #8aa88a;
 	padding-top: 20px;
+	padding-bottom: 30px;
 }
 
 main {
@@ -133,7 +134,7 @@ main {
 	background-color: rgb(219, 211, 197);
 	max-width: 100%;
 	display: grid;
-	grid-template-columns: 230px 150px auto 120px 120px 180px;
+	grid-template-columns: 210px 150px auto 120px 120px 180px;
 	font-weight: bold;
 	padding: 10px 0px 10px 20px;
 	font-family: "Frank Ruhl Libre", serif;
@@ -169,10 +170,6 @@ main {
 	margin: 5px 0px 5px 0px;
 }
 
-#studentList:nth-child(odd) {
-	background-color: #eee5d5;
-}
-
 #name:hover {
 	color: #6f1212;
 	cursor: pointer;
@@ -195,15 +192,22 @@ main {
 }
 
 [data-field="prefect"][data-prefect="true"] {
-	background-color: purple;
+	background-color: #6f1212;
+}
+
+[data-field="prefect"]:hover {
+	box-shadow: -1px -1px 2px rgb(201, 183, 161), 1px 1px 2px #ffffff;
 }
 
 [data-field="squad"][data-squad="true"] {
-	background-color: green;
+	background-color: #6f1212;
+}
+[data-field="squad"]:hover {
+	box-shadow: -1px -1px 2px rgb(201, 183, 161), 1px 1px 2px #ffffff;
 }
 
 [data-field="expel"]:hover {
-	background-color: #a01b1b;
+	box-shadow: -1px -1px 2px rgb(201, 183, 161), 1px 1px 2px #ffffff;
 }
 
 /* -----------POP UP BOX STYLING------------ */
@@ -214,7 +218,6 @@ main {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	/* backdrop-filter: blur(1.5px); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -235,6 +238,13 @@ main {
 #student_photo {
 	width: 100px;
 	height: 100px;
+}
+
+#house_crest {
+	position: relative;
+	top: 180px;
+	width: 100px;
+	height: 98px;
 }
 
 #pop_names {
@@ -267,12 +277,6 @@ button#closebutton:hover {
 	margin-top: 15px;
 }
 
-footer {
-	margin-top: 60px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
 .hidden {
 	visibility: hidden;
 }
@@ -301,23 +305,68 @@ footer {
 	box-shadow: 1px 1px 1px #333;
 	border-radius: 12px;
 	padding: 2em;
-	background-color: #ffe19e;
+	background-color: #dad4c7;
 	position: relative;
+	font-family: "Frank Ruhl Libre", serif;
+	text-align: center;
+}
+
+.dialog button {
+	border-radius: 10px;
+	padding: 3px;
+	border: 1px solid rgb(184, 174, 165);
+}
+
+.dialog button:hover {
+	background-color: rgb(172, 166, 159);
+	cursor: pointer;
+}
+
+.sidebyside {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding-top: 20px;
 }
 
 button.closebutton {
 	position: absolute;
-	right: -1em;
-	top: -1em;
+	right: 15px;
+	top: 10px;
 	border-radius: 50%;
-	width: 2em;
-	height: 2em;
+	width: 17px;
+	height: 17px;
+	background-color: red;
+	border: 1px solid rgb(116, 0, 0);
+}
+
+button.closebutton:hover {
+	background-color: rgb(161, 0, 0);
+	cursor: pointer;
 }
 
 .dialog h1 {
-	margin-top: 0;
+	margin: -10px auto 10px auto;
 }
 
+footer {
+	padding-top: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+	background-color: rgb(0, 0, 51);
+	color: rgb(125, 135, 156);
+	font-family: "Oswald", sans-serif;
+	letter-spacing: 2px;
+	font-weight: 300;
+}
+
+/*-----effekter----*/
+
 .valgt {
+	box-shadow: -1px -1px 2px #5e725e, 1px 1px 2px rgb(192, 206, 192);
+}
+
+.valgt_sort {
 	box-shadow: -1px -1px 2px #5e725e, 1px 1px 2px rgb(192, 206, 192);
 }
